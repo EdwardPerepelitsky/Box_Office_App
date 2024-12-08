@@ -53,7 +53,7 @@ async def salesOverCategory(st_date,end_date,category,limit,name):
             'as max_day_sales ',
             'inner join movies on movies.id=max_day_sales.movie_id;'])
             return_columns=['title','releaseDate','total']
-            params = (st_date,end_date,limit,name)
+            params = (name,st_date,end_date,limit)
 
         
 

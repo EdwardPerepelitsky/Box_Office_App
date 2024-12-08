@@ -45,7 +45,7 @@ async def salesOverCategory(st_date,end_date,category,limit,name):
             '"releaseDate",',
             'total from (select movie_id,total from ', 
             '(select movie_id,sum(total_sales) as total from ',
-            '(sales inner join (select id from theaters where name=$4) as ', 
+            '(sales inner join (select id from theaters where name=%s) as ', 
             'theater_id_tab on sales.theater_id=theater_id_tab.id) ',
             'as sales_theater where ',
             'sale_date >=%s and sale_date<=%s ',  
